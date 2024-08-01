@@ -1,5 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   margin: 0;
+  background: #E5E5E5;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -10,4 +15,135 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.header {
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+.header h1 {
+  text-align: center;
+  margin-bottom: 0;
+  font-size: 20px;
+}
+
+.header p {
+  text-align: center;
+}
+
+.header .logo {
+  text-align: center;
+}
+
+.header .logo img {
+  cursor: pointer;
+  width: 100px;
+}
+
+.menu {
+  background-color: #000;
+  text-align: center;
+  padding: 15px 0;
+}
+
+.menu .menuItem {
+  display: inline-block;
+  margin: 0 30px;
+}
+
+.menu .menuItem a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* Full viewport height */
+}
+
+/* Styles for the page */
+.login-page {
+  width: 500px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  text-align: center;
+}
+
+
+.page h2 {
+  text-align: center;
+}
+
+.page p {
+  text-align: center;
+}
+
+.inputs {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+}
+
+/* .inputs .input {
+  text-align: center;
+} */
+
+.inputs .input input {
+  height: 30px;
+  width: 300px;
+  margin: 5px;
+}
+
+.inputs .button {
+  text-align: center;
+}
+
+.inputs .button button {
+  background-color: #555;
+  border: none;
+  padding: 15px 30px;
+  color: #fff;
+  width: 308px;
+  margin: 10px 0;
+}
+
+.error {
+  background-color: red;
+  width: 280px;
+  margin: 5px 0;
+  margin: 0 auto;
+  padding: 15px;
+  color: #fff;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #000;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }

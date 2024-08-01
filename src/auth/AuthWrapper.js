@@ -5,6 +5,7 @@ import {
   RenderRoutes,
 } from "../components/structure/RenderNavigation";
 import { Login } from "../components/pages/Login";
+import Loading from "../components/pages/Loading";
 
 const AuthContext = createContext();
 export const AuthData = () => useContext(AuthContext);
@@ -14,7 +15,7 @@ export const AuthWrapper = () => {
   const [user, setUser] = useState({
     name: "",
     isAuthenticated: false,
-    isAdmin: false,
+    isAdmin: true,
   });
   const [isLoading, setIsLoading] = useState(true); // Add loading state
 
@@ -39,11 +40,13 @@ export const AuthWrapper = () => {
         // Save user to localStorage
         localStorage.setItem("user", JSON.stringify(loggedInUser));
 
-        // Redirect based on isAdmin
+        // Display loading component and redirect based on isAdmin
+        setIsLoading(true);
         if (loggedInUser.isAdmin) {
-          window.location.href = "https://www.google.com"; // Redirect to Google if admin
-        } else {
+          setIsLoading(false); // Set loading to false before navigating to home page
           navigate("/"); // Navigate to home page if not admin
+        } else {
+          window.location.href = "https://www.google.com"; // Redirect to Google if admin
         }
 
         resolve("success");
@@ -60,7 +63,7 @@ export const AuthWrapper = () => {
   };
 
   if (isLoading) {
-    return null; // Render nothing while loading
+    return <Loading />; // Render loading component while loading
   }
 
   return (
