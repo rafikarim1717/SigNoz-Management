@@ -5,6 +5,7 @@
 // import { Private } from "../pages/Private";
 import { Access } from "../pages/Access";
 import { UserManagement } from "../pages/User-Management";
+import { Signoz } from "../pages/Signoz";
 
 export const nav = [
   {
@@ -14,13 +15,13 @@ export const nav = [
     isMenu: true,
     isPrivate: false,
   },
-  //   {
-  //     path: "/access",
-  //     name: "Access",
-  //     element: <Access />,
-  //     isMenu: true,
-  //     isPrivate: true,
-  //   },
+  {
+    path: "/signoz",
+    name: "Signoz",
+    element: <Signoz />,
+    isMenu: true,
+    isPrivate: false,
+  },
   {
     path: "/user-management",
     name: "User Management",
@@ -28,32 +29,4 @@ export const nav = [
     isMenu: true,
     isPrivate: true,
   },
-  //   {
-  //     path: "/about",
-  //     name: "About",
-  //     element: <About />,
-  //     isMenu: true,
-  //     isPrivate: false,
-  //   },
-  //   {
-  //     path: "/login",
-  //     name: "Login",
-  //     element: <Login />,
-  //     isMenu: false,
-  //     isPrivate: false,
-  //   },
-  //   {
-  //     path: "/private",
-  //     name: "Private",
-  //     element: <Private />,
-  //     isMenu: true,
-  //     isPrivate: true,
-  //   },
-  //   {
-  //     path: "/account",
-  //     name: "Account",
-  //     element: <Account />,
-  //     isMenu: true,
-  //     isPrivate: true,
-  //   },
 ];

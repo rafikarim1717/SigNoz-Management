@@ -25,6 +25,11 @@ export const Login = () => {
 
   // Function to handle login
   const doLogin = async () => {
+    if (!formData.userName || !formData.password) {
+      setErrorMessage("Both username and password are required.");
+      return; // Stop further execution if validation fails
+    }
+
     try {
       await login(formData.userName, formData.password);
 
@@ -91,6 +96,7 @@ export const Login = () => {
                   onKeyDown={handleKeyPress} // Add keydown event
                   type="text"
                   placeholder="Username"
+                  required
                 />
               </div>
               <div>

@@ -15,7 +15,7 @@ export const AuthWrapper = () => {
   const [user, setUser] = useState({
     name: "",
     isAuthenticated: false,
-    isAdmin: true,
+    isAdmin: false,
   });
   const [isLoading, setIsLoading] = useState(true); // Add loading state
 
@@ -43,7 +43,8 @@ export const AuthWrapper = () => {
 
         // Display loading component and redirect based on isAdmin
         setIsLoading(true);
-        if (loggedInUser.isAdmin) {
+        if (loggedInUser.isAdmin === false) {
+          console.log(userName);
           setIsLoading(false); // Set loading to false before navigating to home page
           navigate("/"); // Navigate to home page if not admin
         } else {
